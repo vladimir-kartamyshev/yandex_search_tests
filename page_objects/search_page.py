@@ -10,7 +10,7 @@ class SearchPage(BasePage):
         search_results = self.driver.find_elements(By.XPATH, "//a[@class='Link Link_theme_outer Path-Item link path__item link organic__greenurl']")
         return search_results
 
-    def get_expected_result(self, index):
+    def get_expected_result_url(self, index):
         """Получаем ссылку на ожидаемую позицию в результатах поиска"""
         href = self.get_search_results()[index - 1].get_attribute("href")
         return href
