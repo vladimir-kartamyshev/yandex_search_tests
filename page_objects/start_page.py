@@ -1,5 +1,3 @@
-from typing import List
-
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
@@ -17,6 +15,7 @@ class StartPage(BasePage):
         return search_field
 
     def get_value_search_field(self) -> str:
+        """Получаем значение поля поиска"""
         return self.get_search_field().get_attribute('value')
 
     def search_field_is_present(self) -> bool:
@@ -45,13 +44,16 @@ class StartPage(BasePage):
         return True
 
     def suggest_is_open(self) -> bool:
+        """Дожидаемся и проверяем открылись ли поисковые подсказки"""
         WebDriverWait(self.driver, 5).until(
             expected_conditions.presence_of_element_located((By.CLASS_NAME, 'mini-suggest_open')))
         return True
 
     def get_link_pictures(self) -> WebElement:
+        """Получаем элемент кнопки картинки"""
         link_pictures = self.driver.find_element(By.LINK_TEXT, 'Картинки')
         return link_pictures
 
-    def swich_to_new_window(self) -> None:
+    def switch_to_new_window(self) -> None:
+        """Переключаемся на новую вкладку в браузере"""
         self.driver.switch_to.window(self.driver.window_handles[1])
