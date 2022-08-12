@@ -19,6 +19,6 @@ def test_search(search_query, expected_url, expected_index):
     assert start_page.search_field_is_present_and_clickable()
     start_page.send_keys_in_the_search_field(search_query)
     assert start_page.suggest_is_open()
-    assert start_page.click_enter_search_field_with_wait()
-    assert expected_url == search_page.get_expected_result(expected_index)
+    assert start_page.click_enter_in_search_field_with_wait()
+    assert expected_url == search_page.get_expected_result_url(expected_index)
     driver.quit()

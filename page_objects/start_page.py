@@ -31,13 +31,7 @@ class StartPage(BasePage):
         """Вводим символы в поле поиска"""
         self.get_search_field().send_keys(keys)
 
-    def click_enter_search_field(self) -> bool:
-        """Жмем enter в поле поиска и ждем пока страница изменится на страницу поиска"""
-        self.get_search_field().send_keys(Keys.ENTER)
-        WebDriverWait(self.driver, 5).until(expected_conditions.url_contains('https://yandex.ru/search'))
-        return True
-
-    def click_enter_search_field_with_wait(self) -> bool:
+    def click_enter_in_search_field_with_wait(self) -> bool:
         """Жмем enter в поле поиска и ждем пока не появится таблица с результатами поиска"""
         self.get_search_field().send_keys(Keys.ENTER)
         WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.ID, 'search-result')))
@@ -57,7 +51,3 @@ class StartPage(BasePage):
     def click_button_pictures(self):
         """Кликаем на кнопку раздела картинки"""
         self.get_button_pictures().click()
-
-    def switch_to_new_window(self) -> None:
-        """Переключаемся на новую вкладку в браузере"""
-        self.driver.switch_to.window(self.driver.window_handles[1])

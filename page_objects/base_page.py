@@ -17,3 +17,7 @@ class BasePage:
     def open(self):
         """Открыть страницу"""
         self.driver.get(self.get_base_url())
+
+    def switch_to_new_window(self) -> None:
+        """Переключаемся на новую вкладку в браузере"""
+        self.driver.switch_to.window(self.driver.window_handles[1])
