@@ -18,12 +18,12 @@ class PicturePage(BasePage):
         return category_results
 
     def get_name_category(self, value) -> str:
-        """Получаем имя ожидаемой категории картинок согласно индексу"""
+        """Получаем название требуемой категории картинок согласно индексу"""
         name_category = self.get_categories_results()[value - 1].get_attribute("data-grid-text")
         return name_category
 
     def click_categories_result(self, value):
-        """Кликаем на ожидаемую категорию картинок согласно индексу """
+        """Кликаем на требуемую категорию картинок согласно индексу """
         category_result = self.driver.find_elements(By.CLASS_NAME, 'PopularRequestList-Item')[value - 1]
         category_result.click()
 

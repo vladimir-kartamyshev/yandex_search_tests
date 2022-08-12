@@ -18,7 +18,7 @@ def test_picture_search(expected_category_id, expected_picture_id):
     picture_page = PicturePage(driver)
     expected_url = 'https://yandex.ru/images/'
     start_page.open()
-    start_page.get_link_pictures().click()
+    start_page.click_button_pictures()
     start_page.switch_to_new_window()
     assert expected_url in picture_page.get_current_url()
     picture_page.click_categories_result(expected_category_id)

@@ -49,10 +49,14 @@ class StartPage(BasePage):
             expected_conditions.presence_of_element_located((By.CLASS_NAME, 'mini-suggest_open')))
         return True
 
-    def get_link_pictures(self) -> WebElement:
-        """Получаем элемент кнопки картинки"""
+    def get_button_pictures(self) -> WebElement:
+        """Получаем элемент кнопки раздела картинки"""
         link_pictures = self.driver.find_element(By.LINK_TEXT, 'Картинки')
         return link_pictures
+
+    def click_button_pictures(self):
+        """Кликаем на кнопку раздела картинки"""
+        self.get_button_pictures().click()
 
     def switch_to_new_window(self) -> None:
         """Переключаемся на новую вкладку в браузере"""
