@@ -1,4 +1,12 @@
 # yandex_tests
+Для гибкости тестов реализовано 3 переменных:
+BASE_URL=https://yandex.ru;
+SELENIUM_DRIVER_KIND=chrome;
+WINDOW_RESOLUTION=DESKTOP_1920X1080
+
+Реализован запуск тестов в облаке: GitHub Actions
+Используется pytest-html - плагин для pytest, который позволяет создавать отчеты в HTML
+
 
 Поиск в яндексе
 1)	Зайти на yandex.ru
