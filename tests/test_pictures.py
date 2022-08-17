@@ -27,6 +27,7 @@ def test_picture_search(expected_category_id, expected_picture_id):
     assert picture_page.picture_is_present()
     expected_src = picture_page.get_src_image()
     picture_page.movie_to_next_pictures()
+    assert expected_src != picture_page.get_src_image()
     picture_page.movie_to_previous_pictures()
     assert expected_src == picture_page.get_src_image()
-    driver.quit()
+    driver.close()
