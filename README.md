@@ -1,6 +1,6 @@
 # yandex_tests
 
-Для гибкости тестов реализовано 3 переменных:
+Для гибкости тестов реализовано 3 переменных окружения:
 BASE_URL=https://yandex.ru;
 SELENIUM_DRIVER_KIND=chrome;
 WINDOW_RESOLUTION=DESKTOP_1920X1080
